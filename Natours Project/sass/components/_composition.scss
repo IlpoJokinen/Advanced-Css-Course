@@ -1,0 +1,26 @@
+.composition {
+  position: relative;
+
+  &__photo {
+
+    &--p1 {
+      @extend %image-composition-base;
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      @extend %image-composition-base;
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      @extend %image-composition-base;
+      left: 20%;
+      top: 10rem;
+    }
+
+  }
+
+}
