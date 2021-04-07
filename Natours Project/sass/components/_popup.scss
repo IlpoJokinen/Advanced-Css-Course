@@ -10,22 +10,51 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  @media (max-width: 80em) {
+    &__heading__secondary {
+      margin-top: 3rem;
+    }
+
+    &__heading__tertiary {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
   &__content {
     @include absCenter;
     width: 75%;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 3px;
-    display: table;
+    display: block;
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
+
+    @media (max-width: 80em) {
+      display: block;
+      padding: 3rem 2rem;
+    }
+
+    @include respond(phone) {
+      height: 100vh;
+      overflow-y: auto;
+    }
   }
 
   &__left {
     width: 33.333333%;
     display: table-cell;
+
+    @media (max-width: 80em) {
+      width: 100%;
+      display: block;
+      float: left;
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
   }
 
   &__right {
@@ -33,11 +62,28 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @media (max-width: 80em) {
+      width: 100%;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 80em) {
+      width: 100%;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+    @media (max-width: 80em) {
+      width: 50%;
+      float: left;
+      display: block;
+      height: 100%;
+    }
   }
 
   &__text {
@@ -56,6 +102,11 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    @include respond(phone) {
+      column-count: 1;
+      margin-bottom: 3rem;
+    }
   }
 
   //Open states
@@ -80,6 +131,12 @@
       text-decoration: none;
       display: inline-block;
       line-height: 1;
+    }
+    @media (max-width: 80em) {
+      &:link,
+      &:visited {
+        top: 1.5rem;
+      }
     }
 
     &:hover {
